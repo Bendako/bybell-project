@@ -25,6 +25,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-vue": "^5.0.4",
     "axios": "^1.6.8",
+    "daisyui": "^4.10.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.1",
     "postcss": "^8",
