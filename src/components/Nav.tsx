@@ -7,7 +7,7 @@ export default function Nav({}: Props) {
     <ul className="flex justify-center menu menu-horizontal bg-base-200">
         <li><a>כתובים</a></li>
         <li><a>נביאים</a></li>
-        <li><a>תנ"ך</a></li>
+        <li><a>תנך</a></li>
     </ul>
   )
 }
