@@ -3,6 +3,38 @@ export default function Home() {
   // const API_KEY = "f7a16330e01d0b7ab260ee35022cb79f"
   // const URL = "api.scripture.api.bible"
 
+// Define the base URL of the API
+const baseURL = 'https://api.scripture.api.bible/v1';
+
+// Define your API key if required
+const apiKey = 'f7a16330e01d0b7ab260ee35022cb79f';
+
+// Define the Bible ID for the Hebrew translation (you need to find the appropriate ID for Hebrew in the API documentation)
+const bibleIdHebrew = 'hbo';
+
+// Define the chapter ID for Genesis chapter 1 (e.g., 'GEN.1' for Genesis chapter 1)
+const chapterId = 'GEN.1';
+
+// Construct the URL for fetching Genesis chapter 1 in Hebrew
+const urlHebrew = `${baseURL}/bibles/${bibleIdHebrew}/chapters/${chapterId}`;
+
+// Make a GET request to fetch Genesis chapter 1 in Hebrew
+fetch(urlHebrew, {
+  headers: {
+    'api-key': apiKey // Include your API key in the request header if required
+  }
+})
+.then(response => response.json())
+.then(data => {
+  // Log the contents of Genesis chapter 1 in Hebrew to the console
+  console.log('Genesis Chapter 1 (Hebrew):', data);
+})
+.catch(error => {
+  // Handle any errors
+  console.error('Error fetching Genesis Chapter 1 in Hebrew:', error);
+});
+
+
   // fetch('https://api.scripture.api.bible/')
 	// .then(response => response.json())
 	// .then(data => console.log(data))

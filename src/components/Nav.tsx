@@ -8,6 +8,13 @@ const Navbar = () => {
     const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
     const [contactDropdownOpen, setContactDropdownOpen] = useState(false);
 
+
+    // I need to refactor this
+    const bibleBooksArray = ["תורה", "נביאים", "כתובים"]
+    const genesisBooks = ["בראשית", "שמות", "ויקרא", "במדבר", "דברים"]
+    const prophetsBooks = ["יהושע", "שופטים", "שמואל א", "שמואל ב", "מלכים א", "מלכים ב", "ישעיה", "ירמיה", "יחזקאל", "הושע", "יואל", "עמוס", "עובדיה", "יונה", "מיכה", "נחום", "חבקוק", "צפניה", "חגי", "זכריה", "מלאכי"]
+    const writingsBooks = ["תהילים", "משלי", "איוב", "שיר השירים", "רות", "איכה", "קהלת", "אסתר", "דניאל", "עזרא", "נחמיה", "דברי הימים א", "דברי הימים ב"]
+
     // Function to close other dropdowns when one is clicked
     const handleDropdownClick = (dropdownState: any, setDropdownState: any) => {
         setHomeDropdownOpen(false);
@@ -36,7 +43,7 @@ const Navbar = () => {
                                 aria-haspopup="true"
                                 aria-expanded={homeDropdownOpen ? "true" : "false"}
                             >
-                                כתובים
+                                { bibleBooksArray[2] }
                             </button>
                             {/* Dropdown Panel */}
                             <div
@@ -45,10 +52,19 @@ const Navbar = () => {
                                 aria-orientation="vertical"
                                 aria-labelledby="home-menu"
                             >
-                                <div className="py-1" role="none">
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Home Action 1</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Home Action 2</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Home Action 3</a>
+                                <div className="py-1 overflow-y-scroll h-96" role="none">
+                                { writingsBooks.map((book, i) => {
+                                        return (
+                                        <a 
+                                        key={i}
+                                        href="#" 
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" 
+                                        role="menuitem"
+                                       >
+                                           { writingsBooks[i] }
+                                       </a>
+                                        )
+                                    }) }
                                 </div>
                             </div>
                         </div>
@@ -61,7 +77,7 @@ const Navbar = () => {
                                 aria-haspopup="true"
                                 aria-expanded={aboutDropdownOpen ? "true" : "false"}
                             >
-                                נביאים
+                                { bibleBooksArray[1] }
                             </button>
                             {/* Dropdown Panel */}
                             <div
@@ -70,10 +86,19 @@ const Navbar = () => {
                                 aria-orientation="vertical"
                                 aria-labelledby="about-menu"
                             >
-                                <div className="py-1" role="none">
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About Action 1</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About Action 2</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">About Action 3</a>
+                                <div className="py-1 overflow-y-scroll h-96" role="none">
+                                { prophetsBooks.map((book, i) => {
+                                        return (
+                                        <a 
+                                        key={i}
+                                        href="#" 
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" 
+                                        role="menuitem"
+                                       >
+                                           { prophetsBooks[i] }
+                                       </a>
+                                        )
+                                    }) }
                                 </div>
                             </div>
                         </div>
@@ -86,7 +111,7 @@ const Navbar = () => {
                                 aria-haspopup="true"
                                 aria-expanded={contactDropdownOpen ? "true" : "false"}
                             >
-                                תורה
+                                { bibleBooksArray[0] }
                             </button>
                             {/* Dropdown Panel */}
                             <div
@@ -96,9 +121,18 @@ const Navbar = () => {
                                 aria-labelledby="contact-menu"
                             >
                                 <div className="py-1" role="none">
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact Action 1</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact Action 2</a>
-                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Contact Action 3</a>
+                                    { genesisBooks.map((book, i) => {
+                                        return (
+                                        <a 
+                                        key={i}
+                                        href="#" 
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" 
+                                        role="menuitem"
+                                       >
+                                           { genesisBooks[i] }
+                                       </a>
+                                        )
+                                    }) }
                                 </div>
                             </div>
                         </div>
