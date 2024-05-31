@@ -10,7 +10,7 @@ import Verse from '@/components/Verse';
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto h-auto p-4">
       <Verse />
     </div>
   );
